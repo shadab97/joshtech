@@ -25,7 +25,7 @@
         </ul>
         <!-- burger icon for opening sidebar  -->
         <div class="icon-burger">
-            <img src="./images/burger.png" width="50px" height="50px" alt="">
+            <img class="icon-burger-img"src="./images/burger.png" width="50px" height="50px" alt="">
         </div>
         <!-- side navigation  start ->enable in mobile and tablet mode -->
         <div class="side-navigation">
@@ -206,6 +206,7 @@
 <script>
     // logic for side bar nav in mobile or tab view
     var icon_burger=document.querySelector(".icon-burger");
+    var icon_burger_img=document.querySelector(".icon-burger-img");
     var side_nav=document.querySelector(".side-navigation");
     var isopen=false;//used to check wether the sidebar is open or not initially false means not open;
     icon_burger.addEventListener("click",(e)=>{
@@ -213,11 +214,14 @@
             console.log("addopen");
             side_nav.style.left="0px";
             isopen=!isopen;
+            icon_burger_img.setAttribute("src","./images/close-icon.png")
+            
         }
         else{
             console.log("innotadd");
             side_nav.style.left="-200px";
             isopen=!isopen;
+            icon_burger_img.setAttribute("src","./images/burger.png")
         } 
     });
     //initialising a video popup 
