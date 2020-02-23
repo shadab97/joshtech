@@ -355,7 +355,7 @@ border-radius: 5px;
    }
    .media > *:nth-child(2){
     -ms-grid-row: 1;
-    -ms-grid-column: 3;   
+    -ms-grid-column: 2;   
 }
 .images,.videos{
     padding-top: 1em;
@@ -536,8 +536,8 @@ margin-left: 100px;
         -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
         display: grid;
-        -ms-grid-columns: 1fr ;
-        grid-template-columns: 1fr ;
+        /* /* -ms-grid-columns: 1fr ; */
+        grid-template-columns: 1fr ; 
         grid-gap:1em;
     }
     .media{
@@ -553,12 +553,14 @@ margin-left: 100px;
     /* ie support for grid-template*  */
     .main-content-desc> *:nth-child(1),
     .customer-and-news> *:nth-child(1),
-    .main-product-info> *:nth-child(1),
-    .media> *:nth-child(1){
+    .main-product-info> *:nth-child(1){
         -ms-grid-row: 2;
         -ms-grid-column: 2;
-       }
-  
+    }
+    .media> *:nth-child(2){
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    } 
     .footer{
         height: -webkit-max-content;
         height: -moz-max-content;
@@ -610,7 +612,6 @@ margin-left: 100px;
 }
 
 /* for devices with between 426px to 768px */
- 
 @media (min-width: 426px) and (max-width: 768px) {
     .hero-area{
         margin: auto;
