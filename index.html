@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company</title>
     <!-- google font link -->
-    <link  href="https://fonts.googleapis.com/css?family=Abel:400,600,700&display=swap" rel="stylesheet">
+    <!-- <link  href="https://fonts.googleapis.com/css?family=Abel:400,600,700&display=swap" rel="stylesheet"> -->
     <!-- styles start -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/lightbox.css">
@@ -138,16 +138,19 @@
                     <div class="main-content-heading">MEDIA RESOURSE-PHOTOS</div>
                     <div class="images">
                         <!-- images links for galary -->
-                        <div class="">
+                        <!-- IE doesn't support inline element for css grid that is why 
+                        i wrap up <a> in div tag  
+                        -->
+                        <div >
                             <a href="./images/imageslide1.jpg" data-lightbox="mygalary"><img src="./images/imageslide1.jpg" alt="image-thumbnail" ></a>
                         </div>
-                        <div class="">
+                        <div >
                             <a href="./images/imageslide2.jpg" data-lightbox="mygalary"><img src="./images/imageslide2.jpg" alt="image-thumbnail" ></a>
                         </div>
-                        <div class="">
+                        <div >
                             <a href="./images/imageslide3.jpg" data-lightbox="mygalary"><img src="./images/imageslide3.jpg" alt="image-thumbnail" ></a>
                         </div>
-                        <div class="">
+                        <div >
                             <a href="./images/imageslide4.jpg" data-lightbox="mygalary"><img src="./images/imageslide4.jpg" alt="image-thumbnail" ></a>
                         </div>
                    </div>
@@ -157,16 +160,17 @@
                     <div class="main-content-heading">MEDIA RESOURSE-VIDEOS</div> 
                     <div class="videos">
                         <!-- videos links for galary -->
+                    <!-- IE doesn't support inline element for css grid thas why 
+                        there is i wrap up <a> in div tag  
+                        -->
                     <div>
                         <a class="venobox_custom" data-gall="myGallery" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=mrvWHfH5pm0">
                             <img src="./images/imageslide1.jpg" alt="image-thumbnail" >
-
                         </a>
                     </div>   
                     <div> 
                         <a class="venobox_custom" data-gall="myGallery" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=b0TmSJxQDv8">
-                            <img src="./images/imageslide2.jpg" alt="image-thumbnail" >
-                            
+                            <img src="./images/imageslide2.jpg" alt="image-thumbnail" >    
                         </a>
                     </div>  
                     <div>  
@@ -204,54 +208,17 @@
     <!-- container end -->
   
  <!-- include jQuery -->
-<script  src="./js/jquery.min.js"></script>
+<script  defer src="./js/jquery.min.js"></script>
 
 <!-- include Cycle2  used for image galary-->
-<script  src="./js/jquery.cycle2.js"></script>
+<script  defer src="./js/jquery.cycle2.js"></script>
 <!-- script to add more images at a later time -->
-<script  src="./js/lightbox-plus-jquery.js"></script>
+<script defer src="./js/lightbox-plus-jquery.js"></script>
 <!-- venobox used for video galary -->
-<script  src="./venobox/venobox.js"></script>
-
- 
-
-
-
-
+<script defer src="./venobox/venobox.js"></script>
+<script  defer src="./js/index.js"></script>
 <script>
-    // logic for side bar nav in mobile or tab view
-    var icon_burger=document.querySelector(".icon-burger");
-    var icon_burger_img=document.querySelector(".icon-burger-img");
-    var side_nav=document.querySelector(".side-navigation");
-    var isopen=false;//used to check wether the sidebar is open or not initially false means not open;
-    icon_burger.addEventListener("click",(e)=>{
-        if(!isopen){
-            console.log("addopen");
-            side_nav.style.left="0px";
-            isopen=!isopen;
-            icon_burger_img.setAttribute("src","./images/close-icon.png")
-            
-        }
-        else{
-            console.log("innotadd");
-            side_nav.style.left="-200px";
-            isopen=!isopen;
-            icon_burger_img.setAttribute("src","./images/burger.png")
-        } 
-    });
-    //initialising a video popup 
-    $(document).ready(function(){
-        $('.venobox').venobox(); 
-    });
-
-    // customisition for video popup
-    $('.venobox_custom').venobox({
-        framewidth: '400px',        
-        frameheight: '300px',       
-        titleattr: 'data-title',    
-        numeratio: true,            
-        infinigall: true           
-    });
+   
 </script>
 </body>
 </html>
